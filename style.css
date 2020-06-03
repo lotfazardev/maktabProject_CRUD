@@ -1,3 +1,4 @@
+/* add font icon */
 @font-face {
     font-family: 'icomoon';
     src:  url('./Assets/icomoon/icomoon.eot?248690');
@@ -129,4 +130,34 @@
 /* global defs */
 *{
     font-family: Samim !important;
+}
+body{
+    background-color: #ececec;
+}
+h1{
+    color: #19181A;
+}
+thead{
+    background-color: #F3D250;
+    border-radius: 5px;
+}
+thead tr th{
+    color: #19181A;
+}
+tbody tr:hover{
+    background-color: #F3E5AF;
+}
+/* zurb foundation customization */
+.button{
+    border-radius: 5px;
+    background-color: #5da2d5;
+}
+.button:focus{
+    outline: none;
+}
+.alert{
+    background-color: #F78888 !important;
+}
+.alert:focus{
+    background-color: #F74747 !important;
 }
