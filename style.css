@@ -141,11 +141,11 @@ thead{
     background-color: #F3D250;
     border-radius: 5px;
 }
-thead tr th{
-    color: #19181A;
-}
 tbody tr:hover{
     background-color: #F3E5AF;
+}
+thead tr th{
+    color: #19181A;
 }
 /* zurb foundation customization */
 .button{
@@ -159,5 +159,8 @@ tbody tr:hover{
     background-color: #F78888 !important;
 }
 .alert:focus{
+    background-color: #F74747 !important;
+}
+.alert:hover{
     background-color: #F74747 !important;
 }
