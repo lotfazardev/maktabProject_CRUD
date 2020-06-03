@@ -18,11 +18,60 @@
       <h1><strong>دفترچه تلفن همراه</strong></h1>
     </div>
     <div class="grid-x flex-container align-justify">
-      <button type="button" class="button flex-container align-justify">
+      <button id="add-contact-btn" type="button" class="button flex-container align-justify"
+        data-toggle="add-contact-form-layout">
         <span class="icon-user-plus"></span>
         <span>&emsp;مخاطب جدید</span>
       </button>
-      <button type="button" class="button alert flex-container align-justify">
+      <div class="dropdown-pane" id="add-contact-form-layout" data-dropdown data-auto-focus="true">
+        <form id="add-contact-form">
+          <div class="grid-container">
+            <div class="grid-x">
+              <div class="cell">
+                <label>نام
+                  <input type="text" name="name" placeholder="نام شما">
+                </label>
+              </div>
+              <div class="cell">
+                <label>نام خانوادگی
+                  <input type="text" name="familyName" placeholder="فامیلی">
+                </label>
+              </div>
+              <div class="cell">
+                <label>تلفن همراه
+                  <input type="number" name="phoneNumber" placeholder="09XX XXX XXXX">
+                </label>
+              </div>
+              <div class="cell">
+                <label>شماره منزل
+                  <input type="number" name="telNumber" placeholder="021-88XXXXXX">
+                </label>
+              </div>
+              <div class="cell">
+                <label>آدرس
+                  <input type="text" name="address" placeholder="تهران - خیابان ستارخان ...">
+                </label>
+              </div>
+              <div class="cell">
+                <label>آدرس
+                  <input type="date" name="date" placeholder="تهران - خیابان ستارخان ...">
+                </label>
+              </div>
+              <div class="cell">
+                <label>توضیحات
+                  <textarea placeholder="توضیحات برای مخاطب"></textarea>
+                </label>
+              </div>
+              <div class="cell">
+                <button id="delete-all-btn" type="submit" class="button flex-container align-justify">
+                  <span class="icon-user-plus"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <button id="delete-all-btn" type="button" class="button alert flex-container align-justify">
         <span class="icon-bin"></span>
         <span>&emsp;حذف همه</span>
       </button>
@@ -43,7 +92,7 @@
               <th>دسترسی ها</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="tabel-data">
           </tbody>
         </table>
       </div>
@@ -58,7 +107,6 @@
   <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
     integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
   <script src="./action.js"></script>
-
 
 </body>
 

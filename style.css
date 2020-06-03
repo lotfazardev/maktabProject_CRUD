@@ -147,6 +147,15 @@ tbody tr:hover{
 thead tr th{
     color: #19181A;
 }
+/* delete arrow of input number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
 /* zurb foundation customization */
 .button{
     border-radius: 5px;
@@ -164,3 +173,4 @@ thead tr th{
 .alert:hover{
     background-color: #F74747 !important;
 }
+/* form */
