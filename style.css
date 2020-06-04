@@ -131,6 +131,14 @@
 *{
     font-family: Samim !important;
 }
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
 body{
     background-color: #ececec;
 }
@@ -161,14 +169,18 @@ input[type=number] {
     border-radius: 5px;
     background-color: #5da2d5;
 }
+.button:hover{
+    background-color: #1C85D5;
+}
 .button:focus{
+    background-color: #5da2d5;
     outline: none;
 }
 .alert{
     background-color: #F78888 !important;
 }
 .alert:focus{
-    background-color: #F74747 !important;
+    background-color: #F78888 !important;
 }
 .alert:hover{
     background-color: #F74747 !important;
