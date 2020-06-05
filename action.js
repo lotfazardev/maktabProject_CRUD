@@ -1,5 +1,18 @@
 $(document).foundation();
 const userData = [] ;
+// function writeLocalStorage(data){
+//     localStorage.setItem("userData", (localStorage.getItem("userData") ? localStorage.getItem("userData") + "@+new" : "") + data);
+// }
+// function readLocalStorage(){
+//     if(localStorage.getItem("userData")){
+//         saved = localStorage.getItem("userData").split('@+new')
+//         for(let i of saved){
+//             userData.push(JSON.parse(i))
+//         }
+//     }
+// }
+// readLocalStorage()
+// renderTable()
 function renderTable(){
     $('#tabel-data').html("")
     for(let i = 0 ; i < userData.length ; i++){
@@ -38,6 +51,7 @@ $(document).ready(function () {
             input.value = ""
         }
         userData.push(tmp)
+        // writeLocalStorage(JSON.stringify(tmp))
         renderTable()
         return false
     })
