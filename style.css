@@ -185,4 +185,21 @@ input[type=number] {
 .alert:hover{
     background-color: #F74747 !important;
 }
+.warning{
+    background-color: #FFD272 !important;
+}
+.warning:focus{
+    background-color: #FFD272 !important;
+}
+.warning:hover{
+    background-color: #FFAE00 !important;
+}
+.warning *{
+    color: white;
+}
 /* form */
+
+/* accessibility */
+.UD-buttons{
+    margin: 0 !important;
+}
