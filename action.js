@@ -29,10 +29,10 @@ function renderTable() {
               <td>${userData[i].details}</td>
               <td>
               <div>
-                  <button type="submit" class="button warning UD-buttons update-btn">
+                  <button data-column="${i}" type="submit" class="button warning UD-buttons update-btn">
                     <span class="icon-pen"></span>
                   </button>
-                  <button type="submit" class="button alert UD-buttons delete-btn">
+                  <button data-column="${i}" onclick="deleteItem(this)" type="submit" class="button alert UD-buttons delete-btn">
                     <span class="icon-bin"></span>
                   </button>
                 </div>
@@ -41,6 +41,30 @@ function renderTable() {
             `
     )
   }
+}
+function deleteItem(item){
+  Swal.fire({
+    title: 'آیا به حذف این مخاطب اطمینان دارید ؟',
+    text: "توجه تمامی اطلاعات پاک شده غیر قابل بازگشت می باشد !",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    cancelButtonText: 'نه پاکش نکن !',
+    confirmButtonText: 'آره میدونم پاکش کن'
+  }).then((result) => {
+    if (result.value) {
+      let selected = item.getAttribute('data-column')
+      userData.splice(selected,1);
+      console.log(selected);
+      renderTable()
+      Swal.fire(
+        'مخاطب مورد نظر حذف شد !',
+        '',
+        'success'
+      )
+    }
+  })
 }
 $(document).ready(function () {
   $('#add-contact-form').submit(function () {
@@ -56,14 +80,14 @@ $(document).ready(function () {
     return false
   })
 
-  $('#delete-all-btn').click(function(){
-    if(!userData.length){
+  $('#delete-all-btn').click(function () {
+    if (!userData.length) {
       Swal.fire(
         'موردی برای حذف وجود ندارد',
         '',
         'warning'
       )
-    }else{
+    } else {
       Swal.fire({
         title: 'آیا از پاک کردن تمامی موارد اطمینان دارید ؟',
         text: "توجه تمامی اطلاعات پاک شده غیر قابل بازگشت می باشد !",
